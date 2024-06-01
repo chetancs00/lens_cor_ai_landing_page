@@ -1,12 +1,53 @@
 "use client";
 
 // components/AboutUs.js
-import { useState } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const AboutUs = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const scrollRef = useRef()
+
+  useGSAP(
+    () => {
+      const boxes = gsap.utils.toArray(scrollRef.current.children);
+      boxes.forEach((box) => {
+        gsap.from(box, {
+          // x: 150 * (boxes.indexOf(box) + 1),
+          // borderRadius: "100%",
+          scale: 1.03,
+          opacity: 0,
+          scrollTrigger: {
+            trigger: box,
+            start: "bottom bottom",
+            end: "top 20%",
+            scrub: true,
+          },
+          ease: "power1.inOut",
+        });
+        gsap.to(box, {
+          // x: 150 * (boxes.indexOf(box) + 1),
+          // borderRadius: "100%",
+          scale: 1.03,
+          opacity: 100,
+          scrollTrigger: {
+            trigger: box,
+            start: "bottom bottom",
+            end: "top 20%",
+            scrub: true,
+          },
+          ease: "power1.inOut",
+        });
+      });
+    },
+    { scope: scrollRef }
+  );
 
   return (
     <div className="dark:bg-black bg-white w-full pt-20 pb-10">
@@ -14,7 +55,9 @@ const AboutUs = () => {
         <h1 className="text-6xl font-raleway font-semibold">About Us</h1>
         <div className="mx-auto about-us-underline"></div>
       </div>
-      <div className="about-us-hero flex flex-col-reverse sm:flex-col-reverse md:flex-row items-center justify-between w-4/5 mx-auto p-6 dark:bg-[#1b1c1e] bg-[#e2f2ff] rounded-lg"
+      <div
+      ref={scrollRef}
+      className="about-us-hero flex flex-col-reverse sm:flex-col-reverse md:flex-row items-center justify-between w-4/5 mx-auto p-6 dark:bg-[#1b1c1e] bg-[#e2f2ff] rounded-lg"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       >

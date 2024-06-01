@@ -4,11 +4,13 @@ import { createContext, useState, useEffect, useContext } from 'react';
 export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const storedTheme = localStorage?.getItem('theme');
-  const [theme, setTheme] = useState( storedTheme || 'light');
+  const [mode, setMode] = useState('light');
+  const [theme, setTheme] = useState(mode);
 
-  useEffect(() => {
-    if (storedTheme) {
+   useEffect(() => {
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme !== null) {
+      setMode(storedTheme)
       setTheme(storedTheme);
     } else {
       const root = window.document.documentElement;

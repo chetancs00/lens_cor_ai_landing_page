@@ -1,9 +1,50 @@
 "use client";
 
-import React from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+import React, {useRef} from "react";
 import ServicesCard from "./ServicesCard";
+gsap.registerPlugin(ScrollTrigger);
 
 const Services = () => {
+  const scrollRef = useRef()
+
+
+  useGSAP(
+    () => {
+      const boxes = gsap.utils.toArray(scrollRef.current.children);
+      boxes.forEach((box) => {
+        gsap.from(box, {
+          // x: 150 * (boxes.indexOf(box) + 1),
+          // borderRadius: "100%",
+          opacity: 0,
+          // scrollTrigger: {
+          //   trigger: box,
+          //   start: "bottom bottom",
+          //   end: "top 20%",
+          //   scrub: true,
+          // },
+          ease: "power1.inOut",
+        });
+        gsap.to(box, {
+          // x: 150 * (boxes.indexOf(box) + 1),
+          // borderRadius: "100%",
+          scale: 1.03,
+          opacity: 1,
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: box,
+            start: "bottom bottom",
+            end: "top 50%+=100px",
+            scrub: true,
+          },
+          ease: "power1.inOut",
+        });
+      });
+    },
+    { scope: scrollRef }
+  );
 
     const cardData = [
         {
@@ -46,7 +87,9 @@ const Services = () => {
           We provide Artificial Intelligence Services
         </h1>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 p-6 h-2/4 md:mr-32 md:ml-32"
+      <div 
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 p-6 h-2/4 md:mr-32 md:ml-32"
+      ref={scrollRef}
       >
       {cardData.map((card) => (
         <ServicesCard

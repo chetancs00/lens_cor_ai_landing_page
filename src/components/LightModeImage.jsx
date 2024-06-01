@@ -1,9 +1,38 @@
+'use client';
 import React from 'react'
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
 
 const LightModeImage = () => {
+
+
+  useGSAP(() => {
+    gsap.from(".light-img", {
+      y: -30,
+      repeat: false,
+      yoyo: 0,
+      // rotation: 360,
+      duration: 1,
+      opacity: 0,
+      ease: "power1.inOut",
+    });
+    gsap.from(".image-hero-wrapper", {
+      y: -40,
+      repeat: false,
+      yoyo: 0,
+      // rotation: 360,
+      duration: 1.5,
+      stagger: 0.15,
+      opacity: 0,
+      ease: "power1.inOut",
+    });
+  }, []);
+
   return (
     <div>
         <img
+        className='light-img'
         height="100%"
         width="100%"
         style={{height: "100vh"}}
@@ -15,14 +44,13 @@ const LightModeImage = () => {
         </h1>
         </div>
         <div className="image-hero-wrapper mb-6">
-        <p className="hidden md:block text-xl font-semi-bold text-black  font-poppins margin-8-rem">
-          From Conserving Wildlife to Automatically Generating Caricatures
+        <p className="hidden md:block text-xl font-semi-bold text-black  font-poppins  text-start md:ml-12">
+          From Conserving Wildlife to Automatically Generating Caricatures -We Do It All
         <span className="hidden md:block font-bold text-black  text-xl font-poppins">
-          <> - We Do It All</>
         </span>
         </p>
         </div>
-        <div className="md:image-hero-wrapper md:mr-60 mb-6 sm:ml-50">
+        <div className="md:image-hero-wrapper md:mr-72 mb-6 sm:ml-50 flex justify-start ">
         <>
           <button className="learn-more-light bg-black text-white rounded-lg font-bold">
             Learn More

@@ -79,6 +79,7 @@ export default function WhyLens2() {
       {cards.map((data) => (
         <Card
           background={data.backgroundGradient}
+          key={data.title}
           outline={data.outlineColor}
           title={data.title}
           image={data.images}
