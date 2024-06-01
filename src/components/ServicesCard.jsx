@@ -9,6 +9,7 @@ const ServicesCard = ({ cardNo, title, titleColor, content }) => {
   return (
     <div
       className={` relative p-6 rounded-lg shadow-lg transition-all duration-300 
+      family-poppins
         ${theme === 'dark' ? 'bg-[#1b1c1e]' : 'bg-white'}
         hover:bg-transparent hover:border ${theme === 'dark' ? 'hover:border-[#1b1c1e]' : 'hover:border-white'}
         `}

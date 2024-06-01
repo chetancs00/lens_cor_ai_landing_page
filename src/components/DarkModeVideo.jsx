@@ -12,7 +12,7 @@ const DarkModeVideo = () => {
         muted
         loop
         playsInline
-        // src="https://res.cloudinary.com/detwrhe0k/video/upload/v1691730947/lenscorp-website/pexels-pressmaster-3129671-3840x2160-30fps_1_ak5nsz_d7alrn.mp4"
+        src="https://res.cloudinary.com/detwrhe0k/video/upload/v1691730947/lenscorp-website/pexels-pressmaster-3129671-3840x2160-30fps_1_ak5nsz_d7alrn.mp4"
       />
        </div>
       <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center text-center z-20">

@@ -75,7 +75,7 @@ const Services = () => {
 
       
   return (
-    <div className="bg-custom-gradient dark:bg-none bg-black p-6 shadow-lg">
+    <div className="bg-custom-gradient dark:bg-none bg-black p-6 shadow-lg family-poppins">
       <div className="services-heading">
         <h2 className="text-2xl font-bold mb-2 text-black dark:text-white">
           SERVICES

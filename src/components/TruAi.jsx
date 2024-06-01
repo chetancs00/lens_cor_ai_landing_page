@@ -2,7 +2,7 @@ import React from "react";
 
 const TruAi = () => {
   return (
-    <div className="true-ai-container dark:bg-black transition-all duration-300">
+    <div className="true-ai-container dark:bg-black transition-all duration-300 family-poppins leading-10">
       <div className="true-ai-wrapper mt-20">
         <div className="true-ai-main bg-[#272e5c] dark:bg-[#242424] flex">
           <span className="hidden md:block true-ai-first">
