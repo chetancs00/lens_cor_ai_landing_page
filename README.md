@@ -36,7 +36,9 @@ To get started with the project, follow these steps:
    cd lenscorp-clone
 
 2. **Install Dependencies**
-    ```npm install
+    ```bash
+    npm install
 
 3. **Run the development server**
-    ```npm run dev
+    ```bash
+    npm run dev
