@@ -47,6 +47,10 @@
   font-family: "Poppins" !important;
 }
 
+.dark{
+  background: black !important;
+}
+
 .image-hero-wrapper {
   display: flex;
   flex-direction: column;
@@ -99,10 +103,10 @@
   color: transparent;
   overflow: clip;
 }
-.about-us-img:hover{
+/* .about-us-img:hover{
   /* width: 440px;
   height: 405px; */
-}
+/* } */
 .about-us-underline{
   width: 165px;
   height: 8px;

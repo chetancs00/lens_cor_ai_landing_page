@@ -22,8 +22,8 @@ const Navbar = () => {
   const links = [
     { href: 'https://makemyweb.ai', label: 'Make My Web' },
     { href: '/', label: 'Home' },
-    { href: '/company', label: 'Company' },
-    { href: '/blogs', label: 'Blogs' },
+    { href: 'https://lenscorp.ai/about', label: 'Company' },
+    { href: 'https://lenscorp.ai/blogs', label: 'Blogs' },
   ];
 
   const handleMenuToggle = () => {
@@ -99,41 +99,42 @@ const Navbar = () => {
           )}
         </button>
       </div>
-      <div className="md:hidden flex items-center">
+      <div className="md:hidden flex items-center transition-all duration-300">
         <button onClick={handleMenuToggle} className="p-2 rounded transition-all duration-300">
           {menuOpen ? (
-            <XMarkIcon className="w-6 h-6 text-black dark:text-white"/>
+            <XMarkIcon className="w-6 h-6 text-black dark:text-white transition-all duration-300"/>
           ) : (
-            <Bars3Icon className="w-6 h-6 text-black dark:text-white"  />//>
+            <Bars3Icon className="w-6 h-6 text-black dark:text-white transition-all duration-300"  />//>
           )}
         </button>
       </div>
       {menuOpen && (
-        <div className="absolute top-16 left-0 w-full bg-white dark:bg-black dark:backdrop-blur-[80px] shadow-md p-4 md:hidden transition-all duration-300">
-          {links.map((link) => (
-            <Link key={link.href} href={link.href}>
-              <div
-                className={twMerge(
-                  clsx(
-                    'font-bold',
-                    'text-black dark:text-white my-2',
-                    pathname === link.href && 'bg-gradient-to-r from-blue-400 to-teal-200 text-transparent bg-clip-text font-bold',
-                  )
-                )}
-              >
-                {link.label}
-              </div>
-            </Link>
-          ))}
-          <button onClick={toggleTheme} className="p-2 rounded transition-colors duration-300 w-full text-left mt-2 ml-40">
-            {theme === 'light' ? (
-              <MoonIcon className="w-6 h-6 text-black dark:text-white" />
-            ) : (
-              <SunIcon className="w-6 h-6 text-black dark:text-yellow-500" />
-            )}
-          </button>
+  <div className={`absolute top-16 left-0 w-full bg-white dark:bg-black dark:backdrop-blur-[80px] shadow-md p-4 md:hidden transition-all duration-300 transform ${menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}`}>
+    {links.map((link) => (
+      <Link key={link.href} href={link.href}>
+        <div
+          className={twMerge(
+            clsx(
+              'font-bold',
+              'text-black dark:text-white my-2',
+              pathname === link.href && 'bg-gradient-to-r from-blue-400 to-teal-200 text-transparent bg-clip-text font-bold',
+            )
+          )}
+        >
+          {link.label}
         </div>
+      </Link>
+    ))}
+    <button onClick={toggleTheme} className="p-2 rounded transition-colors duration-300 w-full text-left mt-2 ml-40">
+      {theme === 'light' ? (
+        <MoonIcon className="w-6 h-6 text-black dark:text-white" />
+      ) : (
+        <SunIcon className="w-6 h-6 text-black dark:text-yellow-500" />
       )}
+    </button>
+  </div>
+)}
+
     </nav>
   );
 };

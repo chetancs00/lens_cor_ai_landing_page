@@ -19,7 +19,7 @@ import ConnectWithUs from "@/components/ConnectWithUs";
 export default function Home() {
 
   return (
-    <MaxWidthWrapper className="mb-12 text-center text-white">
+    <MaxWidthWrapper className="mb-12 text-center text-white bg-white dark:bg-black">
       <div className="relative w-full">
        <Navbar/>
       </div>

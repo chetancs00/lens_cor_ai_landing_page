@@ -69,7 +69,7 @@ const AboutUs = () => {
             We put our hearts, souls, and sweat into designing and developing
             custom AI-powered solutions for your business so you don't have to.
           </p>
-          <Link href="/about">
+          <Link href="https://lenscorp.ai/about">
             <div className="dark:border-white dark:text-white inline-block bg-transparent text-[#424242] border border-[#424242] rounded-2xl px-6 py-2 font-semibold transition-colors duration-300 hover:bg-[#424242] hover:text-white dark:hover:bg-white dark:hover:text-black">
               Learn More
             </div>

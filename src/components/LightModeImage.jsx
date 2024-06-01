@@ -34,7 +34,7 @@ const LightModeImage = () => {
         <img
         className='light-img'
         height="100%"
-        width="100%"
+        width="99.9%"
         style={{height: "100vh"}}
         src="https://lenscorp.ai/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdetwrhe0k%2Fimage%2Fupload%2Fv1691730929%2Flenscorp-website%2FDesktop_-_23_u3ypg0.jpg&w=128&q=75"/>
         <div className="absolute top-0   h-full flex flex-col items-center justify-center  z-10 leading-4">
@@ -51,11 +51,11 @@ const LightModeImage = () => {
         </p>
         </div>
         <div className="md:image-hero-wrapper md:mr-72 mb-6 sm:ml-50 flex justify-start ">
-        <>
+        <a href='https://lenscorp.ai/about'>
           <button className="learn-more-light bg-black text-white rounded-lg font-bold">
             Learn More
           </button>
-        </>
+        </a>
         </div>
         
       </div>

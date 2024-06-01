@@ -25,15 +25,15 @@ export default function Footer() {
     <footer className="bg-white dark:bg-black py-10 dark:text-white text-black">
       <MaxWidthWrapper>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          <div className="space-y-6 flex flex-col text-start mx-auto">
+          <div className="space-y-6 flex flex-col text-start mx-auto sm:justify-center sm:flex sm:items-center">
             <img
               src="https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fnav_logo.e5fb945a.png&w=96&q=75"
               width={96}
               height={96}
               alt="Logo"
-              className='dark:invert'
+              className='dark:invert sm:m-auto'
             />
-            <p className="text-sm">Tomorrow's Vision, Today!</p>
+            <p className="text-lg">Tomorrow's Vision, Today!</p>
             <div className="flex space-x-3">
               <SocialButton label="Facebook" href="https://www.facebook.com/">
                 <FaFacebook className='transition-color duration-300 hover:bg-gradient-to-br from-blue-600 via-blue-500 to-blue-400' size={28} />
@@ -60,7 +60,7 @@ export default function Footer() {
             <a href="#">Blogs</a>
             <a href="#">Life at LENS</a>
           </div>
-          <div className="space-y-2 flex flex-col text-start mx-auto">
+          <div className="space-y-2 flex flex-col text-start mx-auto sm:items-center">
             <ListHeader>CONNECT</ListHeader>
             <p>+1-517-9300-792</p>
             <p>+91-9990-736-796</p>
